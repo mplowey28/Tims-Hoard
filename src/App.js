@@ -1,9 +1,13 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-
 import NavBar from "./components/NavBar";
-import { Home, Silver, Gold, USPaper, USCoin, WorldCoin } from "./views";
+import Home from "./views/Home";
+import Silver from "./views/Silver";
+import Gold from "./views/Gold";
+import USPaper from "./views/USPaper";
+import USCoin from "./views/USCoin";
+import WorldCoin from "./views/WorldCoin";
 import ProtectedRoute from "./auth/protectedRoute";
 
 const App = () => {
