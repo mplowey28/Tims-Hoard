@@ -3,7 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import NavBar from "./components/NavBar";
-import Home from "./views/Home";
+import { Home, Silver, Gold, USPaper, USCoin, WorldCoin } from "./views";
+import ProtectedRoute from "./auth/protectedRoute";
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -18,6 +19,11 @@ const App = () => {
       <div className="container flex-grow-1">
         <Switch>
           <Route path="/" exact component={Home} />
+          <ProtectedRoute path="/silver" component={Silver} />
+          <ProtectedRoute path="/gold" component={Gold} />
+          <ProtectedRoute path="/uspaper" component={USPaper} />
+          <ProtectedRoute path="/uscoin" component={USCoin} />
+          <ProtectedRoute path="/worldcoin" component={WorldCoin} />
         </Switch>
       </div>
     </div>
