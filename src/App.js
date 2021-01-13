@@ -10,6 +10,7 @@ import USCoin from "./views/USCoin";
 import WorldCoin from "./views/WorldCoin";
 import ProtectedRoute from "./auth/protectedRoute";
 import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -20,17 +21,17 @@ const App = () => {
 
   return (
     <div id="app" className="d-flex flex-column h-100">
-      <NavBar />
       <div className="container flex-grow-1">
         <Sidebar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <ProtectedRoute path="/silver" component={Silver} />
-          <ProtectedRoute path="/gold" component={Gold} />
-          <ProtectedRoute path="/uspaper" component={USPaper} />
-          <ProtectedRoute path="/uscoin" component={USCoin} />
-          <ProtectedRoute path="/worldcoin" component={WorldCoin} />
+          <Route path="/silver" component={Silver} />
+          <Route path="/gold" component={Gold} />
+          <Route path="/uspaper" component={USPaper} />
+          <Route path="/uscoin" component={USCoin} />
+          <Route path="/worldcoin" component={WorldCoin} />
         </Switch>
+        <Footer />
       </div>
     </div>
   );
